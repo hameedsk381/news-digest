@@ -1,0 +1,111 @@
+{
+    "app": {
+        "title": "GovDigest",
+        "subtitle": "Intelligence Management System",
+        "tagline": "Department of Information & Technology | Government Intelligence Network"
+    },
+    "login": {
+        "title": "GovDigest",
+        "subtitle": "Intelligence Management System",
+        "username": "Username",
+        "usernamePlaceholder": "Enter your ID",
+        "password": "Secure Password",
+        "passwordPlaceholder": "••••••••",
+        "submit": "Access System",
+        "secureEncryption": "Secure Encryption",
+        "authorizedOnly": "Authorized Only",
+        "invalidCredentials": "Invalid username or password"
+    },
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "uploadFiles": "Upload Files",
+        "knowledgeBank": "Knowledge Bank",
+        "assistant": "Assistant",
+        "analytics": "Analytics",
+        "systemLogs": "System Logs",
+        "logout": "Logout",
+        "adminPanel": "Admin Panel"
+    },
+    "header": {
+        "dashboard": "Daily Overview",
+        "files": "Upload Media Files",
+        "history": "Media Knowledge Bank",
+        "chat": "Digital Assistant",
+        "analytics": "Data Statistics",
+        "logs": "System Status"
+    },
+    "dashboard": {
+        "title": "System Overview",
+        "totalFiles": "Total Files",
+        "totalArticles": "Total Articles",
+        "sentimentDistribution": "Sentiment Distribution",
+        "departmentDistribution": "Department Distribution",
+        "positive": "Positive",
+        "negative": "Negative",
+        "neutral": "Neutral",
+        "noData": "No data available"
+    },
+    "upload": {
+        "title": "Upload News Media",
+        "dragDrop": "Drag and drop PDF files here",
+        "or": "or",
+        "browse": "Browse Files",
+        "supportedFormats": "Supported: PDF files up to 50MB",
+        "processing": "Processing...",
+        "success": "Upload successful",
+        "error": "Upload failed"
+    },
+    "chat": {
+        "title": "Digital Research Assistant",
+        "welcomeMessage": "Hello! I am your Digital Research Assistant. You can ask me anything about items in our Knowledge Bank, or toggle 'Live Web Search' to find information from the internet. You can also use the microphone icon to speak your query.",
+        "knowledgeBank": "Knowledge Bank",
+        "liveWebSearch": "Live Web Search",
+        "placeholder": "Ask a government data question...",
+        "webPlaceholder": "Search the live web...",
+        "listening": "Listening...",
+        "voiceActive": "Voice Active",
+        "neuralArchive": "Neural Archive Mode",
+        "firecrawlSearch": "Firecrawl Hybrid Search",
+        "supportingEvidence": "Supporting Evidence",
+        "localArchive": "Local Archive",
+        "liveWeb": "Live Web",
+        "digitalAssistant": "Digital Assistant",
+        "userRequest": "User Request",
+        "scanningNetworks": "Scanning Global Networks...",
+        "analyzingData": "Analyzing Data Bank..."
+    },
+    "history": {
+        "title": "Media Knowledge Bank",
+        "searchPlaceholder": "Search articles...",
+        "filterByDepartment": "Filter by Department",
+        "filterBySentiment": "Filter by Sentiment",
+        "allDepartments": "All Departments",
+        "allSentiments": "All Sentiments",
+        "noArticles": "No articles found",
+        "generateBriefing": "Generate Briefing",
+        "exportExcel": "Export Excel",
+        "selectAll": "Select All",
+        "selected": "Selected"
+    },
+    "analytics": {
+        "title": "Data Analytics",
+        "overview": "Overview",
+        "trends": "Trends",
+        "departments": "Departments",
+        "sentiment": "Sentiment Analysis"
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "retry": "Retry",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "edit": "Edit",
+        "view": "View",
+        "close": "Close",
+        "confirm": "Confirm",
+        "yes": "Yes",
+        "no": "No"
+    }
+}

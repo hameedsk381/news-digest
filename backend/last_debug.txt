@@ -1,0 +1,88 @@
+﻿.\venv\Scripts\python : 
+Traceback (most recent call 
+last):
+At line:1 char:1
++ .\venv\Scripts\python 
+debug_error.py 2>&1 | 
+Out-File -FilePath last_d 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (Trace  
+  back (most recent call    
+ last)::String) [], Remo    
+teException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+  File "C:\Users\cogni\Deskt
+op\news_digest\backend\debug
+_error.py", line 4, in 
+<module>
+    from app.graph.workflow 
+import app as pipeline_graph
+  File "C:\Users\cogni\Deskt
+op\news_digest\backend\app\g
+raph\workflow.py", line 3, 
+in <module>
+    from app.graph.nodes 
+import (
+    ...<4 lines>...
+    )
+  File "C:\Users\cogni\Deskt
+op\news_digest\backend\app\g
+raph\nodes.py", line 3, in 
+<module>
+    from 
+app.agents.layout_agent 
+import LayoutAgent
+  File "C:\Users\cogni\Deskt
+op\news_digest\backend\app\a
+gents\layout_agent.py", 
+line 6, in <module>
+    from app.core.config 
+import settings
+  File "C:\Users\cogni\Deskt
+op\news_digest\backend\app\c
+ore\config.py", line 34, in 
+<module>
+    settings = Settings()
+  File "C:\Users\cogni\Deskt
+op\news_digest\backend\venv\
+Lib\site-packages\pydantic_s
+ettings\main.py", line 194, 
+in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        **__pydantic_self__.
+_settings_build_values(
+        ^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+    ...<27 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\cogni\Deskt
+op\news_digest\backend\venv\
+Lib\site-packages\pydantic\m
+ain.py", line 250, in 
+__init__
+    validated_self = self.__
+pydantic_validator__.validat
+e_python(data, 
+self_instance=self)
+pydantic_core._pydantic_core
+.ValidationError: 1 
+validation error for 
+Settings
+database_url
+  Extra inputs are not 
+permitted 
+[type=extra_forbidden, input
+_value='sqlite:///./news_dig
+est.db', input_type=str]
+    For further information 
+visit https://errors.pydanti
+c.dev/2.12/v/extra_forbidden

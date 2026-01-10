@@ -1,0 +1,41 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart
+python-dotenv
+sqlalchemy
+psycopg2-binary
+pydantic>=2.0.0
+pydantic-settings
+requests
+# Data
+pandas
+openpyxl
+
+# PDF and OCR
+pytesseract
+pdf2image
+PyPDF2
+pymupdf
+pdfminer.six
+
+# Schemas and Utils
+email-validator
+
+# ML
+scikit-learn
+groq
+langgraph
+langchain
+langchain-groq
+langchain-community
+chromadb
+langchain-chroma
+langchain-huggingface
+sentence-transformers
+firecrawl-py
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt==4.0.1
+reportlab
+ollama
+langchain-ollama
