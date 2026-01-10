@@ -13,6 +13,9 @@ venv/
 # Dependencies (Local Windows)
 backend/deps/
 
+# Uploads
+backend/temp_uploads/
+
 # Node
 node_modules/
 .next/

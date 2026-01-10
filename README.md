@@ -46,6 +46,21 @@ Automatically ingest newspaper PDFs and generate a daily structured news digest 
    ```
    Open `http://localhost:3000`.
 
+
+## Deployment (Docker Compose)
+1. Ensure Docker and Docker Compose are installed.
+2. Configure `.env` files in `backend/` as needed (or rely on default in `docker-compose.yml`).
+3. Run the stack:
+   ```bash
+   docker-compose up --build
+   ```
+4. Access:
+   - Frontend: `http://localhost:3000`
+   - Backend API: `http://localhost:8000/docs`
+   - Database: Port 5432
+
 ## Features (Phase 1 MVP)
 - PDF Upload Endpoint (`/api/v1/pdfs/upload/`)
 - Basic Project Structure for Agents
+- Parallel PDF Processing (Hybrid Digital + Vision Fallback)
+- Agentic Database (PostgreSQL/SQLite)
