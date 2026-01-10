@@ -53,13 +53,5 @@ services:
     depends_on:
       - backend
 
-  nginx:
-    image: nginx:alpine
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-    depends_on:
-      - frontend
-      - backend
-
 volumes:
   postgres_data:
