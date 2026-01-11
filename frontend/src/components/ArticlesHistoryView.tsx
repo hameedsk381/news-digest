@@ -1,5 +1,7 @@
 "use client";
 
+
+import { API_BASE_URL } from "@/lib/api";
 import React, { useEffect, useState } from "react";
 import {
     History,
@@ -42,10 +44,10 @@ export function ArticlesHistoryView({ user }: { user: any }) {
         setLoading(true);
         const token = localStorage.getItem("token");
         try {
-            const articlesRes = await fetch("http://localhost:8000/api/v1/pipeline/all-articles", {
+            const articlesRes = await fetch("${API_BASE_URL}/pipeline/all-articles", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
-            const filesRes = await fetch("http://localhost:8000/api/v1/pipeline/history", {
+            const filesRes = await fetch("${API_BASE_URL}/pipeline/history", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
 
@@ -99,7 +101,7 @@ export function ArticlesHistoryView({ user }: { user: any }) {
         setBriefing(null);
         try {
             const token = localStorage.getItem("token");
-            const res = await fetch("http://localhost:8000/api/v1/pipeline/generate-briefing", {
+            const res = await fetch("${API_BASE_URL}/pipeline/generate-briefing", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -267,7 +269,7 @@ export function ArticlesHistoryView({ user }: { user: any }) {
                                     <button
                                         onClick={async () => {
                                             const token = localStorage.getItem("token");
-                                            const res = await fetch("http://localhost:8000/api/v1/pipeline/download-briefing-pdf", {
+                                            const res = await fetch("${API_BASE_URL}/pipeline/download-briefing-pdf", {
                                                 method: "POST",
                                                 headers: {
                                                     "Content-Type": "application/json",
@@ -446,7 +448,7 @@ export function ArticlesHistoryView({ user }: { user: any }) {
                                 </div>
                                 <div className="flex items-center gap-2 relative z-10">
                                     <a
-                                        href={`http://localhost:8000/api/v1/export/${file.id}/excel`}
+                                        href={`${API_BASE_URL}/export/${file.id}/excel`}
                                         onClick={(e) => e.stopPropagation()}
                                         className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-[10px] uppercase tracking-widest font-bold transition-all border border-white/5 text-white/70"
                                     >

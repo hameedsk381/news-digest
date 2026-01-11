@@ -1,5 +1,7 @@
 "use client";
 
+
+import { API_BASE_URL } from "@/lib/api";
 import React, { useState, useRef, useEffect } from "react";
 import {
     Send,
@@ -118,7 +120,7 @@ export function ChatView() {
 
         try {
             const token = localStorage.getItem("token");
-            const res = await fetch("http://localhost:8000/api/v1/search/query", {
+            const res = await fetch("${API_BASE_URL}/search/query", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

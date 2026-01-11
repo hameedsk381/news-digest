@@ -1,5 +1,7 @@
 "use client";
 
+
+import { API_BASE_URL } from "@/lib/api";
 import React, { useEffect, useRef, useState } from "react";
 import {
     Terminal as TerminalIcon,
@@ -38,7 +40,7 @@ export function LiveLogs({ logs: pipelineLogs, user }: { logs: string[], user: a
         setLoading(true);
         const token = localStorage.getItem("token");
         try {
-            const res = await fetch("http://localhost:8000/api/v1/analytics/logs", {
+            const res = await fetch("${API_BASE_URL}/analytics/logs", {
                 headers: { "Authorization": `Bearer ${token}` }
             });
             if (res.ok) {

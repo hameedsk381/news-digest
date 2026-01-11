@@ -1,5 +1,7 @@
 "use client";
 
+
+import { API_BASE_URL } from "@/lib/api";
 import React, { useEffect, useState } from "react";
 import { StatCard } from "./StatCard";
 import {
@@ -21,7 +23,7 @@ export function SummaryDashboard() {
 
     const fetchData = async () => {
         try {
-            const res = await fetch("http://localhost:8000/api/v1/analytics/");
+            const res = await fetch("${API_BASE_URL}/analytics/");
             if (res.ok) {
                 const json = await res.json();
                 setData(json);

@@ -1,5 +1,7 @@
 "use client";
 
+
+import { API_BASE_URL } from "@/lib/api";
 import { useState } from "react";
 
 export default function FileUpload() {
@@ -29,7 +31,7 @@ export default function FileUpload() {
             const formData = new FormData();
             formData.append("file", file);
 
-            const uploadRes = await fetch("http://localhost:8000/api/v1/pdfs/upload/", {
+            const uploadRes = await fetch("${API_BASE_URL}/pdfs/upload/", {
                 method: "POST",
                 body: formData,
             });
@@ -41,7 +43,7 @@ export default function FileUpload() {
             setUploadedFileId(fileId);
 
             // 2. Process Pipeline
-            const pipelineRes = await fetch(`http://localhost:8000/api/v1/pipeline/${fileId}/pipeline`, {
+            const pipelineRes = await fetch(`${API_BASE_URL}/pipeline/${fileId}/pipeline`, {
                 method: "POST",
             });
 
@@ -95,7 +97,7 @@ export default function FileUpload() {
                         <h2 className="text-xl font-semibold">Extracted Articles</h2>
                         {uploadedFileId && (
                             <a
-                                href={`http://localhost:8000/api/v1/export/${uploadedFileId}/excel`}
+                                href={`${API_BASE_URL}/export/${uploadedFileId}/excel`}
                                 className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
                                 target="_blank"
                             >

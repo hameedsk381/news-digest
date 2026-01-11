@@ -1,5 +1,7 @@
 "use client";
 
+
+import { API_BASE_URL } from "@/lib/api";
 import React, { useState } from "react";
 import {
     CloudUpload,
@@ -69,7 +71,7 @@ export function FileUploadView({
                 formData.append("file", updatedQueue[i].file);
 
                 const token = localStorage.getItem("token");
-                const uploadRes = await fetch("http://localhost:8000/api/v1/pdfs/upload/", {
+                const uploadRes = await fetch("${API_BASE_URL}/pdfs/upload/", {
                     method: "POST",
                     headers: { "Authorization": `Bearer ${token}` },
                     body: formData,
@@ -84,7 +86,7 @@ export function FileUploadView({
                 setQueue([...updatedQueue]);
                 onProcessingStart?.(`BATCH: Analyzing ${updatedQueue[i].file.name}...`);
 
-                const pipelineRes = await fetch(`http://localhost:8000/api/v1/pipeline/${uploadJson.id}/pipeline`, {
+                const pipelineRes = await fetch(`${API_BASE_URL}/pipeline/${uploadJson.id}/pipeline`, {
                     method: "POST",
                     headers: { "Authorization": `Bearer ${token}` }
                 });

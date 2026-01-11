@@ -14,6 +14,7 @@ import {
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { API_BASE_URL } from "@/lib/api";
 
 export function LoginView({ onLogin }: { onLogin: (data: any) => void }) {
     const [username, setUsername] = useState("");
@@ -32,7 +33,7 @@ export function LoginView({ onLogin }: { onLogin: (data: any) => void }) {
         formData.append("password", password);
 
         try {
-            const res = await fetch("http://localhost:8000/api/v1/auth/login", {
+            const res = await fetch(`${API_BASE_URL}/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: formData,
