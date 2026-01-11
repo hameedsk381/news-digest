@@ -1,10 +1,16 @@
 
 version: '3.8'
 
+networks:
+  app-network:
+    driver: bridge
+
 services:
   db:
     image: postgres:15-alpine
     restart: always
+    networks:
+      - app-network
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespassword}
@@ -22,6 +28,8 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     restart: always
+    networks:
+      - app-network
     depends_on:
       db:
         condition: service_healthy
@@ -37,6 +45,12 @@ services:
       - GROQ_API_KEY=${GROQ_API_KEY}
       - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}
       - LLM_PROVIDER=${LLM_PROVIDER:-groq}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
     command: >
       sh -c "python -m app.db.init_db && 
              uvicorn app.main:app --host 0.0.0.0 --port 8000"
@@ -48,10 +62,13 @@ services:
       args:
         NEXT_PUBLIC_API_URL: /api/v1
     restart: always
+    networks:
+      - app-network
     environment:
       - NEXT_PUBLIC_API_URL=/api/v1
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
 
 volumes:
   postgres_data:

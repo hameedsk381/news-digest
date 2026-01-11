@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     gcc \
     libpq-dev \
     ghostscript \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install python dependencies
